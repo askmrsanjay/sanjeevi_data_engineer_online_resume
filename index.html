@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanjeevi M | Data Engineer Portfolio</title>
+    <meta name="description"
+        content="Azure & Databricks-certified Data Engineer with 3.5+ years of experience in ETL/ELT, PySpark, and Cloud solutions.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- html2pdf Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Sanjeevi M.</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <input type="file" id="pdf-upload" accept="application/pdf" style="display: none;">
+                <button class="btn btn-outline admin-only" id="undo-btn" title="Undo (Ctrl+Z)" style="display: none;"><i
+                        class="fas fa-undo"></i></button>
+                <button class="btn btn-outline admin-only" id="redo-btn" title="Redo (Ctrl+Y/Ctrl+Shift+Z)"
+                    style="display: none;"><i class="fas fa-redo"></i></button>
+                <button class="btn btn-outline admin-only" id="upload-pdf-btn" style="display: none;"><i
+                        class="fas fa-file-upload"></i> Upload PDF</button>
+                <button class="btn btn-outline admin-only" id="logout-admin" style="display: none;"><i
+                        class="fas fa-sign-out-alt"></i> Logout</button>
+                <button class="btn btn-outline" id="toggle-edit" style="display: none;"><i class="fas fa-edit"></i> Edit
+                    Mode</button>
+                <button class="btn btn-primary download-btn" id="download-pdf">Download PDF</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="resume-content">
+        <!-- Hero Section -->
+        <section id="about" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-image">
+                        <img src="115213349.png" alt="Sanjeevi M Profile Picture" id="profile-img">
+                    </div>
+                    <div class="hero-text">
+                        <span class="badge">Azure & Databricks Certified</span>
+                        <h1>Hi, I'm <span class="highlight">Sanjeevi M</span></h1>
+                        <p class="subtitle">Associate Data Engineer @ Cognizant</p>
+                        <p class="description">
+                            Azure & Databricks-certified Data Engineer with 3.5+ years of experience designing,
+                            automating, and optimizing scalable ETL/ELT pipelines using PySpark, Snowflake, Delta Lake,
+                            and Azure cloud services.
+                        </p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/sanjeevi-m" target="_blank" class="social-link"><i
+                                    class="fab fa-linkedin"></i> LinkedIn</a>
+                            <a href="https://github.com/askmrsanjay" target="_blank" class="social-link"><i
+                                    class="fab fa-github"></i> GitHub</a>
+                            <a href="https://public.tableau.com/app/profile/sanjeevi.m/vizzes" target="_blank"
+                                class="social-link"><i class="fas fa-chart-bar"></i> Tableau</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title">Technical Expertise</h2>
+                <div class="skills-grid" id="skills-container">
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-code"></i></div>
+                        <h3>Languages & Big Data</h3>
+                        <ul>
+                            <li>Python, SQL</li>
+                            <li>PySpark, Apache Spark</li>
+                            <li>Delta Lake, Snowpark</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-cloud"></i></div>
+                        <h3>Cloud & ETL</h3>
+                        <ul>
+                            <li>Azure (ADLS, Key Vault, AKV)</li>
+                            <li>Databricks, Snowflake</li>
+                            <li>Azure Data Factory</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-tools"></i></div>
+                        <h3>Tools & DevOps</h3>
+                        <ul>
+                            <li>Unity Catalog</li>
+                            <li>Azure DevOps, GitHub</li>
+                            <li>Tableau, Slack Integration</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="admin-controls text-center" style="margin-top: 2rem;">
+                    <button class="btn btn-outline admin-only" id="add-skill-card" style="display: none;"><i
+                            class="fas fa-plus"></i> Add Skill Card</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="section bg-light-alt">
+            <div class="container">
+                <h2 class="section-title">Certifications</h2>
+                <div class="cert-grid" id="certs-container">
+                    <div class="cert-item"><i class="fas fa-certificate"></i> <span>Databricks Certified Data Engineer
+                            Associate</span></div>
+                    <div class="cert-item"><i class="fas fa-certificate"></i> <span>Microsoft Azure Data Engineer
+                            Associate</span>
+                    </div>
+                    <div class="cert-item"><i class="fas fa-certificate"></i> <span>Infosys Certified PySpark
+                            Developer</span></div>
+                    <div class="cert-item"><i class="fas fa-certificate"></i> <span>Infosys Certified Python
+                            Programmer</span></div>
+                    <div class="cert-item"><i class="fas fa-certificate"></i> <span>Infosys Certified Tableau
+                            Developer</span></div>
+                </div>
+                <div class="admin-controls text-center" style="margin-top: 1.5rem;">
+                    <button class="btn btn-outline admin-only" id="add-cert" style="display: none;"><i
+                            class="fas fa-plus"></i> Add Certification</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <div class="container">
+                <h2 class="section-title">Professional Journey</h2>
+                <div class="timeline" id="timeline-container">
+                    <!-- Cognizant -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card">
+                            <span class="timeline-date">JUL 2025 – PRESENT</span>
+                            <h3>Associate Data Engineer</h3>
+                            <p class="company">Cognizant Technology Solutions</p>
+                            <ul>
+                                <li>Building cloud-native ETL pipelines using Azure Databricks, PySpark, and Delta Lake.
+                                </li>
+                                <li>Designing metadata-driven workflows to streamline ingestion and improve reusability.
+                                </li>
+                                <li>Implementing Delta Lake ACID pipelines with incremental loads and schema evolution.
+                                </li>
+                                <li>Securing pipelines using Azure Key Vault and Databricks Secret Scopes.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Infosys -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card">
+                            <span class="timeline-date">MAY 2022 – JUL 2025</span>
+                            <h3>Technology Analyst</h3>
+                            <p class="company">Infosys Ltd</p>
+                            <ul>
+                                <li>Designed end-to-end ETL pipelines in Azure Databricks processing large-scale data.
+                                </li>
+                                <li>Engineered CDC solutions for customer billing and sales order pipelines with <1%
+                                        latency.</li>
+                                <li>Built automated reporting pipelines eliminating manual Tableau refreshes.</li>
+                                <li>Developed anomaly detection dashboards for Apple’s Data Operations team.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="admin-controls text-center" style="margin-top: 2rem;">
+                    <button class="btn btn-outline admin-only" id="add-experience" style="display: none;"><i
+                            class="fas fa-plus"></i> Add Experience</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Key Projects</h2>
+                <div class="projects-grid" id="projects-container">
+                    <div class="project-card">
+                        <div class="project-info">
+                            <span class="project-client">Humana Inc.</span>
+                            <h3>Snowpark Rule Framework</h3>
+                            <p>A config-driven Snowpark framework that dynamically reads transformation and validation
+                                rules from JSON, enabling code-light processing.</p>
+                            <div class="project-tags">
+                                <span>Snowpark</span>
+                                <span>Snowflake</span>
+                                <span>JSON</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <span class="project-client">Humana Inc.</span>
+                            <h3>Extract Framework</h3>
+                            <p>Parameter-driven PySpark framework to extract Snowflake data into Delta format on ADLS
+                                without code changes.</p>
+                            <div class="project-tags">
+                                <span>PySpark</span>
+                                <span>Databricks</span>
+                                <span>Unity Catalog</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <span class="project-client">Nike Inc.</span>
+                            <h3>EMEA Billing Pipelines</h3>
+                            <p>Cleansed and processed customer billing and sales order data from Teradata, increasing
+                                efficiency by 50% for 8M+ records.</p>
+                            <div class="project-tags">
+                                <span>Teradata</span>
+                                <span>PySpark</span>
+                                <span>Informatica</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <span class="project-client">Apple Inc.</span>
+                            <h3>Data Platform Ops</h3>
+                            <p>Developed PySpark pipelines and automated Slack notifications for anomaly detection and
+                                pipeline health monitoring.</p>
+                            <div class="project-tags">
+                                <span>PySpark</span>
+                                <span>Tableau</span>
+                                <span>Slack API</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="admin-controls text-center" style="margin-top: 2rem;">
+                    <button class="btn btn-outline admin-only" id="add-project" style="display: none;"><i
+                            class="fas fa-plus"></i> Add Project</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="card text-center">
+                    <h3>Post Graduate Statistics</h3>
+                    <p class="company">Presidency College, Chennai | May 2019</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container text-center">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-details">
+                    <p><i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu, India</p>
+                    <p><i class="fas fa-phone"></i> +91 8610889030</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:sanjayvm66@gmail.com">sanjayvm66@gmail.com</a>
+                    </p>
+                </div>
+                <div class="cta-group">
+                    <a href="mailto:sanjayvm66@gmail.com" class="btn btn-primary">Send Email</a>
+                    <a href="https://www.linkedin.com/in/sanjeevi-m" target="_blank"
+                        class="btn btn-outline">LinkedIn</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 Sanjeevi M. Built with precision and passion.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

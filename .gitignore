@@ -1,0 +1,14 @@
+# Local storage and environment
+.DS_Store
+Thumbs.db
+*.log
+
+# Workspace settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary files
+*.tmp
+*.bak
