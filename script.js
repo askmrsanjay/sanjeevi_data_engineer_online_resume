@@ -9,23 +9,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 1. Admin Security Check ---
     const checkAdmin = () => {
-        const uploadPdfBtn = document.getElementById('upload-pdf-btn');
-        const undoBtn = document.getElementById('undo-btn');
-        const redoBtn = document.getElementById('redo-btn');
+        updateAdminControls();
+    };
 
-        if (localStorage.getItem('admin_access') === 'true') {
-            toggleEditBtn.style.display = 'inline-block';
-            logoutBtn.style.display = 'inline-block';
-            if (uploadPdfBtn) uploadPdfBtn.style.display = 'inline-block';
-            if (undoBtn) undoBtn.style.display = 'inline-block';
-            if (redoBtn) redoBtn.style.display = 'inline-block';
-        } else {
-            toggleEditBtn.style.display = 'none';
-            logoutBtn.style.display = 'none';
-            if (uploadPdfBtn) uploadPdfBtn.style.display = 'none';
-            if (undoBtn) undoBtn.style.display = 'none';
-            if (redoBtn) redoBtn.style.display = 'none';
-        }
+    // Helper to manage visibility of editing-specific tools
+    const updateAdminControls = () => {
+        const isAdmin = sessionStorage.getItem('admin_access') === 'true';
+
+        // 1. Session-level buttons (Always visible if logged in)
+        if (logoutBtn) logoutBtn.style.display = isAdmin ? 'inline-block' : 'none';
+        if (toggleEditBtn) toggleEditBtn.style.display = isAdmin ? 'inline-block' : 'none';
+
+        // 2. Edit-level buttons (Only visible if logged in AND editing)
+        const showEditTools = isAdmin && isEditMode;
+
+        document.querySelectorAll('.admin-only').forEach(btn => {
+            // Skip the session-level buttons we already handled
+            if (btn === logoutBtn || btn === toggleEditBtn) return;
+
+            if (showEditTools) {
+                btn.style.display = (btn.tagName === 'LI') ? 'block' : 'inline-block';
+            } else {
+                btn.style.display = 'none';
+            }
+        });
+
+        // 3. Delete buttons (special opacity transition)
+        document.querySelectorAll('.delete-btn').forEach(btn => {
+            btn.style.opacity = showEditTools ? '0.8' : '0';
+            btn.style.pointerEvents = showEditTools ? 'auto' : 'none';
+        });
     };
 
     // --- Secure Admin Hashing ---
@@ -45,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const adminHash = 'f98cd6d69ad6897932b36f1f08a11eeacd3c1977c34762364e8bea3231aa0263';
 
             if (hashedInput === adminHash) {
-                localStorage.setItem('admin_access', 'true');
+                sessionStorage.setItem('admin_access', 'true');
                 checkAdmin();
                 alert('Admin Mode Activated!');
             } else {
@@ -56,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (logoutBtn) {
         logoutBtn.addEventListener('click', () => {
-            localStorage.removeItem('admin_access');
+            sessionStorage.removeItem('admin_access');
             alert('Logged out.');
             location.reload();
         });
@@ -93,9 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.toggle('edit-mode-active', isEditMode);
         toggleEditBtn.classList.toggle('active', isEditMode);
 
-        document.querySelectorAll('.admin-only').forEach(btn => {
-            btn.style.display = isEditMode ? 'inline-block' : 'none';
-        });
+        updateAdminControls();
 
         makeEditable();
 
@@ -305,57 +316,12 @@ document.addEventListener('DOMContentLoaded', () => {
     resumeContent.addEventListener('blur', () => { if (isEditMode) pushState(); }, true);
 
     // --- 5. PDF Download ---
-    const uploadBtn = document.getElementById('upload-pdf-btn');
-    const pdfInput = document.getElementById('pdf-upload');
-
-    if (uploadBtn) {
-        uploadBtn.addEventListener('click', () => pdfInput.click());
-        pdfInput.addEventListener('change', (e) => {
-            const file = e.target.files[0];
-            if (file && file.type === 'application/pdf') {
-                const reader = new FileReader();
-                reader.onload = (event) => {
-                    localStorage.setItem('sanjeevi_custom_pdf', event.target.result);
-                    alert('Custom PDF Resume Uploaded Successfully!');
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-    }
-
     downloadBtn.addEventListener('click', () => {
-        const customPdf = localStorage.getItem('sanjeevi_custom_pdf');
-
-        // Bypass to custom PDF if uploaded
-        if (customPdf) {
-            const link = document.createElement('a');
-            link.href = customPdf;
-            link.download = 'azure_databricks_data_engineer.pdf';
-            link.click();
-            return;
-        }
-
-        const type = confirm('Download ATS-Friendly (Clean) Resume? \n(Cancel for Standard Design)') ? 'ats' : 'standard';
-
-        const options = {
-            margin: [5, 10, 5, 10], /* Reduced top/bottom margins */
-            filename: `azure_databricks_data_engineer_${type.toUpperCase()}.pdf`,
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2, useCORS: true, letterRendering: true },
-            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-            pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-        };
-
-        const wasEditMode = isEditMode;
-        if (wasEditMode) document.body.classList.remove('edit-mode-active');
-        if (type === 'ats') document.body.classList.add('is-ats');
-        document.body.classList.add('is-printing');
-
-        html2pdf().set(options).from(resumeContent).save().then(() => {
-            document.body.classList.remove('is-printing');
-            document.body.classList.remove('is-ats');
-            if (wasEditMode) document.body.classList.add('edit-mode-active');
-        });
+        // Direct download of the file placed in the project folder
+        const link = document.createElement('a');
+        link.href = './sanjeevi_azure_data_engineer.pdf';
+        link.download = 'sanjeevi_azure_data_engineer.pdf';
+        link.click();
     });
 
     // Smooth scroll and Reveal animations
