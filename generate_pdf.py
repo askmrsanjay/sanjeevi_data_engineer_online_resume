@@ -149,7 +149,7 @@ def build_pdf(output_filename="sanjeevi_ai_ml_data_engineer.pdf"):
     story.append(Paragraph("PROFESSIONAL SUMMARY", section_heading))
     story.append(HRFlowable(width="100%", thickness=0.5, color=BORDER_COLOR, spaceBefore=0, spaceAfter=3))
     summary_text = (
-        "<b>AI/ML Data Engineer</b> with 4+ years of enterprise experience specializing in cloud data platform automation "
+        "<b>AI/ML Data Engineer</b> with 4.5+ years of enterprise experience specializing in cloud data platform automation "
         "(Snowflake, Databricks, Delta Lake, PySpark) and applied GenAI/agentic tooling (Anthropic Claude API, multi-agent systems, "
         "tool-use/function calling). Proven expertise architecting metadata-driven dynamic data masking frameworks auto-generating "
         "124+ role-aware Snowflake views and deploying resilient multi-agent platforms with circuit breakers and backoff retries. "

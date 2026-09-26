@@ -7,7 +7,7 @@ Chennai, Tamil Nadu, India | [+91 8610889030](tel:+918610889030) | [sanjayvm66@g
 ---
 
 ## Professional Summary
-AI/ML Data Engineer with 4+ years of enterprise experience specializing in cloud data platform automation (Snowflake, Databricks, Delta Lake, PySpark) and applied GenAI/agentic engineering (Anthropic Claude API, multi-agent orchestration, tool-use/function calling). Proven track record designing enterprise metadata-driven dynamic data masking frameworks across 124+ Snowflake views and developing production-hardened multi-agent assistants for end-to-end platform operations. Comfortable owning solutions from architectural analysis through POC, production rollout, and executive stakeholder demos.
+AI/ML Data Engineer with 4.5+ years of enterprise experience specializing in cloud data platform automation (Snowflake, Databricks, Delta Lake, PySpark) and applied GenAI/agentic engineering (Anthropic Claude API, multi-agent orchestration, tool-use/function calling). Proven track record designing enterprise metadata-driven dynamic data masking frameworks across 124+ Snowflake views and developing production-hardened multi-agent assistants for end-to-end platform operations. Comfortable owning solutions from architectural analysis through POC, production rollout, and executive stakeholder demos.
 
 ---
 

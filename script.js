@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     checkAdmin();
 
     // --- 2. Persistence Logic ---
-    const RESUME_VERSION = 'v2.6-2026-09-26'; // Incremented to bust localStorage cache for new updates
+    const RESUME_VERSION = 'v2.7-2026-09-26'; // Incremented to bust localStorage cache for new updates
     const savedVersion = localStorage.getItem('sanjeevi_resume_version');
     const savedContent = localStorage.getItem('sanjeevi_resume_content');
 
