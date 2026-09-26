@@ -8,7 +8,7 @@ from reportlab.platypus import (
     SimpleDocTemplate, Paragraph, Spacer, HRFlowable, KeepTogether, ListFlowable, ListItem
 )
 
-def build_pdf(output_filename="sanjeevi_data_engineer.pdf"):
+def build_pdf(output_filename="sanjeevi_ai_ml_data_engineer.pdf"):
     # Target 0.5 in margins for maximum content space and clean layout
     doc = SimpleDocTemplate(
         output_filename,

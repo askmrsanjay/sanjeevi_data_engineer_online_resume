@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     checkAdmin();
 
     // --- 2. Persistence Logic ---
-    const RESUME_VERSION = 'v2.5-2026-09-26'; // Incremented to bust localStorage cache for new updates
+    const RESUME_VERSION = 'v2.6-2026-09-26'; // Incremented to bust localStorage cache for new updates
     const savedVersion = localStorage.getItem('sanjeevi_resume_version');
     const savedContent = localStorage.getItem('sanjeevi_resume_content');
 
@@ -329,8 +329,8 @@ document.addEventListener('DOMContentLoaded', () => {
     downloadBtn.addEventListener('click', () => {
         // Direct download of the file placed in the project folder
         const link = document.createElement('a');
-        link.href = './sanjeevi_data_engineer.pdf';
-        link.download = 'sanjeevi_data_engineer.pdf';
+        link.href = './sanjeevi_ai_ml_data_engineer.pdf';
+        link.download = 'sanjeevi_ai_ml_data_engineer.pdf';
         link.click();
     });
 
