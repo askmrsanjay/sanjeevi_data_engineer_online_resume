@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sanjeevi M | Data & AI Engineer Portfolio</title>
     <meta name="description"
-        content="Data Engineer specializing in cloud data platform automation (Snowflake, Databricks) and applied GenAI/agentic tooling.">
+        content="AI/ML Data Engineer specializing in cloud data platform automation (Snowflake, Databricks) and applied GenAI/agentic tooling.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,9 +56,9 @@
                     <div class="hero-text">
                         <span class="badge">Azure, Databricks & GenAI Certified</span>
                         <h1>Hi, I'm <span class="highlight">Sanjeevi M</span></h1>
-                        <p class="subtitle">Associate Data Engineer @ Cognizant</p>
+                        <p class="subtitle">AI/ML Data Engineer @ Cognizant</p>
                         <p class="description">
-                            Data engineer specializing in cloud data platform automation (Snowflake, Databricks) and applied GenAI/agentic tooling.
+                            AI/ML Data Engineer specializing in cloud data platform automation (Snowflake, Databricks) and applied GenAI/agentic tooling.
                             Designed and built a metadata-driven, role-aware data masking framework that replaced manual view maintenance across 100+ Snowflake views,
                             and an AI-powered multi-agent assistant (Claude/Anthropic tool-use) automating operations across five internal engineering systems.
                             Comfortable owning a problem from analysis through POC, production rollout, and business demo.
@@ -106,8 +106,9 @@
                         <div class="skill-icon"><i class="fas fa-code"></i></div>
                         <h3>Languages</h3>
                         <ul>
-                            <li>Python (Advanced), SQL</li>
-                            <li>PowerShell, Bash, JavaScript, HTML/CSS</li>
+                            <li>Python</li>
+                            <li>SQL</li>
+                            <li>PySpark</li>
                         </ul>
                     </div>
                     <!-- Integration & DevOps -->
@@ -130,13 +131,13 @@
                             <li>Data Governance (DGO certification)</li>
                         </ul>
                     </div>
-                    <!-- Visualization & Monitoring -->
+                    <!-- Visualization -->
                     <div class="skill-card">
                         <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
-                        <h3>Visualization & Monitoring</h3>
+                        <h3>Visualization</h3>
                         <ul>
-                            <li>Tableau Desktop/Server, Streamlit</li>
-                            <li>Prometheus, Grafana, Kibana</li>
+                            <li>Tableau Desktop/Server</li>
+                            <li>Streamlit</li>
                         </ul>
                     </div>
                 </div>
@@ -174,20 +175,29 @@
                         <div class="timeline-dot"></div>
                         <div class="timeline-content card">
                             <span class="timeline-date">OCT 2025 – PRESENT</span>
-                            <h3>Associate Data Engineer — ODMP (Operational Data Management Platform)</h3>
+                            <h3>AI/ML Data Engineer — ODMP (Operational Data Management Platform)</h3>
                             <p class="company">Cognizant Technology Solutions (Client: Humana)</p>
-                            <ul>
-                                <li><strong>Snowflake Provisioning & Field-Masking Automation:</strong> Designed and built a metadata-driven dynamic masking framework replacing manual, per-column view DDL edits: a Python stored procedure (<code>SP_GENERATE_MASKED_VIEW</code>) reads a config table of masking/role/entitlement rules and auto-generates secure, role-aware Snowflake views with column masking and row-level filtering.</li>
-                                <li>Rolled the framework out from a single-view POC (<code>SR_SBMT_APPS</code>) to covering 124 views under the Sales Consumer schema, including complex views with 160+ columns (<code>MBR_POLICY</code>, <code>SR_SBMT_APPS</code>).</li>
-                                <li>Built the Account Provisioning and Field Masking data model (<code>ACCOUNT_PROVISIONING</code>, <code>FIELD_MASKING</code> tables) with a Databricks ingestion path from a business-maintained SharePoint Excel source (via SharePoint REST API/Microsoft Graph) into Snowflake staging and target tables, plus automated IT email alerting on load completion.</li>
-                                <li>Diagnosed and resolved production data-quality issues in the masking framework, including DDL and column mismatches between non-prod and prod, and role-based masking validation defects.</li>
-                                <li>Presented framework design and live demos to business stakeholders (product owners, analytics leads) at multiple project milestones.</li>
-                                <li><strong>Data Acquisition & Cross-Platform Integration:</strong> Delivered an end-to-end pipeline to acquire Call Simulator training data via API into Snowflake (staging → target, compliance schema, 10-year history, incremental load, DGO-certified source), including authoring the Interface Control Document (ICD).</li>
-                                <li>Hydrated priority fact tables (e.g., SOA, SEMINARS_FACT, EVENT_FACT, MMV_FACT, MBR_POLICY_TENURES, CALL_JOURNEY_OVERVIEW, HPMS_CTM) from Snowflake into Databricks Delta tables using an existing hydration framework, including a dedicated round supporting a Microsoft Fabric AI Analytics POC.</li>
-                                <li>Led multi-round analysis and access provisioning for Member Admin Data Lake (MADL) policy data, coordinating intake requests, cross-team access approvals, and Databricks table availability for downstream reporting consumers.</li>
-                                <li>Performed POC-level analysis on Apache Iceberg integration for the Snowflake ODMP data domain and on sourcing Milestone Tracker data via Databricks from an external system (DEP).</li>
-                                <li>Supported UAT defect triage (e.g., Genesys-to-voice-call-enriched source/target mismatches) for downstream reporting pipelines.</li>
-                            </ul>
+                            <!-- Part 1: Snowflake Dynamic Masking & Automation -->
+                            <div class="timeline-subsection">
+                                <h4><i class="fas fa-shield-alt"></i> Snowflake Provisioning & Dynamic Field-Masking</h4>
+                                <ul>
+                                    <li><strong>Metadata-Driven Masking Framework:</strong> Designed and built a dynamic masking engine via a Python stored procedure (<code>SP_GENERATE_MASKED_VIEW</code>) reading role/entitlement config rules to auto-generate secure, role-aware Snowflake views with column masking and row-level filtering.</li>
+                                    <li><strong>Enterprise Scale (POC to 124+ Views):</strong> Scaled framework from a single-view POC to 124 production views across the Sales Consumer schema, handling complex wide schemas with 160+ columns.</li>
+                                    <li><strong>Automated Provisioning Ingestion:</strong> Built the <code>ACCOUNT_PROVISIONING</code> and <code>FIELD_MASKING</code> data models with a Databricks ingestion pipeline from business SharePoint Excel files (via Microsoft Graph/REST API) into Snowflake with automated IT email alerts.</li>
+                                    <li><strong>Data Quality & Governance:</strong> Triaged and resolved production schema drift, DDL mismatches, and role-masking validation defects; conducted milestone architecture demos for product owners and analytics leads.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Part 2: Data Acquisition & Cross-Platform Integration -->
+                            <div class="timeline-subsection">
+                                <h4><i class="fas fa-project-diagram"></i> Data Acquisition & Cross-Platform Lakehouse Integration</h4>
+                                <ul>
+                                    <li><strong>End-to-End API Acquisition Pipeline:</strong> Delivered a compliant API pipeline acquiring 10-year historical and incremental Call Simulator training data into Snowflake (staging → target, compliance schema, DGO-certified source) and authored the Interface Control Document (ICD).</li>
+                                    <li><strong>Delta Lake Hydration (Microsoft Fabric POC):</strong> Hydrated priority fact tables from Snowflake into Databricks Delta tables, including a dedicated round powering a Microsoft Fabric AI Analytics POC.</li>
+                                    <li><strong>MADL Access Governance:</strong> Led analysis and access provisioning for Member Admin Data Lake (MADL) policy data, orchestrating intake requests, cross-team approvals, and Databricks table readiness for downstream analytics.</li>
+                                    <li><strong>Architecture POCs & Production Triage:</strong> Conducted architectural POCs on Apache Iceberg integration for Snowflake ODMP domains and sourcing Milestone Tracker data from external DEP systems; resolved UAT reporting pipeline defects (e.g., Genesys enriched voice mismatches).</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <!-- Infosys -->
@@ -196,7 +206,7 @@
                         <div class="timeline-content card">
                             <span class="timeline-date">MAY 2022 – OCT 2025</span>
                             <h3>Technology Analyst</h3>
-                            <p class="company">Infosys Ltd</p>
+                            <p class="company">Infosys Ltd (Clients: Nike and Apple)</p>
                             <ul>
                                 <li>Designed end-to-end ETL pipelines in Azure Databricks processing large-scale data for enterprise clients including Nike and Apple.</li>
                                 <li>Engineered CDC solutions for customer billing and sales order pipelines with <1% latency.</li>
@@ -219,8 +229,7 @@
                         <div class="project-info">
                             <span class="project-client">Personal / Team Initiative</span>
                             <h3>ODMP Multi-Agent Engineering Assistant</h3>
-                            <p>Built an AI-powered engineering assistant using the Anthropic Claude API (tool-use / function calling), letting engineers operate the ODMP platform in plain English instead of manually running SQL, Databricks notebooks, or navigating five separate tools.</p>
-                            <p style="margin-top: 0.5rem; font-size: 0.9rem;"><strong>Key Features:</strong> Supervisor Agent architecture maintaining multi-turn memory and routing requests to specialist agents (Azure DevOps, Git/Databricks Repos, Databricks Job, ADLS, SharePoint). Added 7 production-hardening features including exponential-backoff retry, masking circuit breaker, and automated test suite.</p>
+                            <p>Built a Claude API-powered multi-agent assistant enabling natural-language platform operations across 5 engineering systems (Azure DevOps, Git, Databricks, ADLS, SharePoint). Designed with a Supervisor-Specialist architecture, multi-turn memory, and 7 production-hardened resilience patterns including circuit breakers and exponential backoff.</p>
                             <div class="project-tags">
                                 <span>Claude API</span>
                                 <span>Multi-Agent</span>

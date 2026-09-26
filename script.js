@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     checkAdmin();
 
     // --- 2. Persistence Logic ---
-    const RESUME_VERSION = 'v1.6-2026-02-14'; // Incremented to force update
+    const RESUME_VERSION = 'v2.5-2026-09-26'; // Incremented to bust localStorage cache for new updates
     const savedVersion = localStorage.getItem('sanjeevi_resume_version');
     const savedContent = localStorage.getItem('sanjeevi_resume_content');
 
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function makeEditable(root = resumeContent) {
-        root.querySelectorAll('h1, h2, h3, p, span:not(.add-tag), li, a:not(.social-link), .cert-item').forEach(el => {
+        root.querySelectorAll('h1, h2, h3, h4, p, span:not(.add-tag), li, a:not(.social-link), .cert-item').forEach(el => {
             el.contentEditable = isEditMode;
         });
     }
