@@ -139,7 +139,7 @@ def build_pdf(output_filename="sanjeevi_ai_ml_data_engineer.pdf"):
         '<a href="https://www.linkedin.com/in/sanjeevi-m"><font color="#2563eb">LinkedIn</font></a> &nbsp;|&nbsp; '
         '<a href="https://github.com/askmrsanjay"><font color="#2563eb">GitHub</font></a> &nbsp;|&nbsp; '
         '<a href="https://public.tableau.com/app/profile/sanjeevi.m/vizzes"><font color="#2563eb">Tableau</font></a> &nbsp;|&nbsp; '
-        '<a href="https://askmrsanjay.github.io/sanjeevi_data_engineer_online_resume/"><font color="#2563eb">Online Portfolio</font></a>'
+        '<a href="https://askmrsanjay.github.io/sanjeevi_portfolio/"><font color="#2563eb">Online Portfolio</font></a>'
     )
     story.append(Paragraph(contacts, contact_style))
     story.append(Spacer(1, 4))

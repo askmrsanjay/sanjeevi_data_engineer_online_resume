@@ -2,7 +2,7 @@
 **AI/ML Data Engineer**
 
 Chennai, Tamil Nadu, India | [+91 8610889030](tel:+918610889030) | [sanjayvm66@gmail.com](mailto:sanjayvm66@gmail.com)  
-[LinkedIn](https://www.linkedin.com/in/sanjeevi-m) | [GitHub](https://github.com/askmrsanjay) | [Tableau Public](https://public.tableau.com/app/profile/sanjeevi.m/vizzes) | [Online Portfolio](https://askmrsanjay.github.io/sanjeevi_data_engineer_online_resume/)
+[LinkedIn](https://www.linkedin.com/in/sanjeevi-m) | [GitHub](https://github.com/askmrsanjay) | [Tableau Public](https://public.tableau.com/app/profile/sanjeevi.m/vizzes) | [Online Portfolio](https://askmrsanjay.github.io/sanjeevi_portfolio/)
 
 ---
 
